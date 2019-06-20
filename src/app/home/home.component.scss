@@ -1,0 +1,28 @@
+.search {
+    width: 100%;
+    margin: 14px;
+}
+
+.text {
+    position: relative; 
+}
+  
+.text-concat {
+    position: relative;
+    display: inline-block;
+    word-wrap: break-word;
+    overflow: hidden;
+    max-height: 3.6em;
+    line-height: 1.2em;
+}
+  
+.text.ellipsis::after {
+    content: "...";
+    position: absolute;
+    right: -12px; 
+    bottom: 5px;
+}
+
+.ver-mais {
+    cursor: pointer;
+}

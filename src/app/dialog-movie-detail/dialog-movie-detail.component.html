@@ -1,0 +1,53 @@
+<div class="modal-header">
+  <h4 class="modal-title" id="modal-basic-title">{{movie.title}}</h4>
+  <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <div class="row">
+    <div class="col-sm-4 text-center">
+      <img class="w-75 img-fluid img-thumbnail" src="{{urlImage}}{{movie.poster_path}}" alt="{{movie.title}}">
+    </div>
+    <div class="col-sm-8">
+      <div class="row">
+        <div class="col-sm-5">
+          <i class="fa fa-calendar" aria-hidden="true"></i> Título original
+        </div>
+        <div class="col-sm-7">
+          {{movie.original_title}}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-5">
+          <i class="fa fa-language" aria-hidden="true"></i> Linguagem original
+        </div>
+        <div class="col-sm-7">
+          {{movie.original_language}}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-5">
+          <i class="fa fa-ban text-danger" aria-hidden="true"></i> Filme adulto
+        </div>
+        <div class="col-sm-7">
+          {{movie.adult ? 'Sim' : 'Não'}}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-5">
+          <i class="fa fa-calendar" aria-hidden="true"></i> Lançamento
+        </div>
+        <div class="col-sm-7">
+          {{movie.release_date | date:'dd/MM/yyyy'}}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">&nbsp;</div>
+  <div class="row">
+    <div class="col-sm-12">
+      {{movie.overview}}
+    </div>
+  </div>
+</div>

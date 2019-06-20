@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row text-center">
+    <form class="search card card-sm" [formGroup]="formPage" (ngSubmit)="findByTitle()">
+      <div class="card-body row no-gutters align-items-center">
+        <div class="input-group mb-3">
+          <input type="text" class="form-control form-control-lg form-control-borderless" placeholder="Digite o nome de um filme" aria-label="Digite o nome de um filme"
+            aria-describedby="button-addon2" formControlName="title" id="title">
+          <div class="input-group-append">
+            <button class="btn btn-lg btn-success" type="submit" id="btnFind">Buscar</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="row cards">
+    <div class="col-sm-4" *ngFor="let item of lstMovies">
+      <div class="card mb-3">
+        <div class="card-body text-center">
+          <p>
+            <img class="w-50 img-fluid img-thumbnail rounded-circle" src="{{urlImage}}{{item.poster_path}}" alt="{{item.title}}">
+          </p>
+          <h4 class="card-title">{{item.title}}</h4>
+          <div class="card-text text-justify">
+            <div class="text ellipsis">
+              <span class="text-concat">
+                {{item.overview}}
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="row ver-mais" (click)="movieDetail(item)">
+            <div class="col-sm-8">{{item.release_date | date: 'dd/MM/yyyy'}}</div>
+            <div class="col-sm-4 text-primary">Ver Mais</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
